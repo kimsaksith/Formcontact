@@ -21,6 +21,10 @@ async function sendToTelegram() {
         alert("Invalid file type. Please select an image.");
         return;
     }
+    if(!email){
+        alert("Wrong email.");
+        return;
+    }
 
     const caption = `Name: ${name}\nEmail: ${email}\nTradingView Username: ${tradingViewUsername}`;
     const formData = new FormData();
