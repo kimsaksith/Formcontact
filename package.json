@@ -1,0 +1,16 @@
+{
+  "name": "telegram-form-bot-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sender.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bakong-khqr": "^1.0.17",
+    "telegram-form-bot-main": "file:"
+  }
+}

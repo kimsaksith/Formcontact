@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://github.com/davidhuotkeo/bakong-khqr/releases/download/bakong-khqr-1.0.6/khqr-1.0.6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Form Section with Image as Part of Form -->
+        <form class="payment-form" onsubmit="return validateEmail()">
+            <div class="form-header">
+                <div class="image-container">
+                    <img src="image/KHQR.png" alt="Payment Instructions" class="form-image">
+                </div>
+                <h2 class="form-title">Send Payment Info</h2>
+            </div>
+            <div class="form-body">
+                <div class="input-group">
+                    <label for="name" class="colored-label">Name:</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email" class="colored-label">Email:</label>
+                    <input type="email" id="email" placeholder="Your Email" class="email-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="message" class="colored-label">TradingView Username:</label>
+                    <input type="text" id="message" placeholder="TradingView Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="file" class="colored-label">Upload Payment Image:</label>
+                    <input type="file" id="file" accept="image/*" required>
+                </div>
+            </div>
+            <div class="form-footer">
+                <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-20 py-2.5 text-center me-2 mb-2">Send</button>
+                <div id="successMessage">Message Sent Successfully!</div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateEmail() {
+            var emailInput = document.getElementById('email');
+            var emailValue = emailInput.value;
+
+            // Check if '@' symbol exists in the email
+            if (!emailValue.includes('@')) {
+                alert('Please enter a valid email address that includes an "@" symbol.');
+                emailInput.focus(); // Focus the email field for user convenience
+                return false;  // Prevent form submission
+            }
+
+            // If email contains '@', allow form submission
+            return true;
+        }
+    </script>
+    <script src="sender.js"></script>
+</body>
+</html>
