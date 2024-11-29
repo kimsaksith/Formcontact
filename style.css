@@ -1,23 +1,14 @@
 /* Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
-  background-size: 300% 300%;
-  animation: gradientAnimation 6s ease infinite;
+  background: linear-gradient(135deg, #f4f4f9, #e0e7ff); /* Light, elegant gradient */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #fff;
-}
-
-/* Keyframe for Background Animation */
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  color: #333; /* Neutral font color */
 }
 
 /* Main Form Container */
@@ -34,18 +25,18 @@ body {
 .payment-form {
   display: flex;
   flex-direction: column;
-  background: rgba(33, 33, 33, 0.8);
-  padding: 40px 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: #ffffff; /* White form background */
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a professional look */
   width: 100%;
   max-width: 500px;
-  /* backdrop-filter: blur(10px); For blur effect */
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .payment-form:hover {
-  transform: scale(1.02); /* Subtle zoom effect on hover */
+  transform: translateY(-5px); /* Subtle lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Header Section with Image */
@@ -57,31 +48,24 @@ body {
 }
 
 .image-container {
-  max-width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .form-image {
-  max-width: 220px;
+  max-width: 150px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.form-image:hover {
-  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
 }
 
 .form-title {
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: #1a202c; /* Dark neutral color */
+  text-transform: capitalize;
   margin-top: 10px;
 }
 
@@ -95,69 +79,61 @@ body {
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .colored-label {
   font-size: 14px;
-  /* color: #76c893; */
-  font-weight: 600;
+  color: #5a5a5a;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
+/* Input Styling */
 input {
   padding: 12px;
-  border-radius: 10px;
-  border: 2px solid hsl(260, 11%, 32%);
-  background: transparent;
-  color: #fff;
+  border: 1px solid #d1d5db; /* Light border */
+  border-radius: 8px;
+  background: #f9fafb; /* Light input background */
+  color: #1a202c;
   font-size: 16px;
   outline: none;
-  transition: all 0.3s ease;
-}
-
-input::placeholder {
-  color: #a8a8a8;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
-  border-color: #fc5c7d;
-  background: rgba(76, 175, 80, 0.1); /* Greenish background on focus */
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.4); /* Soft focus glow */
 }
 
-input:focus::placeholder {
-  color: #fc5c7d;
+input::placeholder {
+  color: #a8a8a8; /* Subtle placeholder text color */
+  font-size: 14px;
 }
 
-/* Form Footer Styling */
-.form-footer {
-  margin-top: 20px;
-  text-align: center;
-  
-}
-
+/* Submit Button */
 #btn {
-  color: white;
-  background: linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8); /* Default gradient */
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb); /* Professional gradient */
   border: none;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 0.625rem 50px;
+  padding: 12px;
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 #btn:hover {
-  background: #fc5c7d;
+  background: #1d4ed8; /* Slightly darker blue on hover */
   transform: translateY(-3px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft hover shadow */
 }
 
 #btn:active {
-  background: #fc5c7d;
+  background: #1e40af; /* Even darker blue on click */
   transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Success Message Styling */
@@ -168,11 +144,11 @@ input:focus::placeholder {
   text-align: center;
   display: none;
   font-weight: 600;
-  letter-spacing: 1px;
-  background: rgba(76, 175, 80, 0.2);
+  letter-spacing: 0.5px;
+  background: rgba(76, 175, 80, 0.1); /* Light green background */
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transform: translateY(20px);
   animation: successAnimation 0.5s ease-out forwards;
@@ -189,24 +165,19 @@ input:focus::placeholder {
   }
 }
 
-/* Media Queries for Mobile */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .form-container {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   .payment-form {
-    padding: 30px;
-    max-width: 100%;
-  }
-
-  .form-header .image-container {
-    margin-bottom: 15px;
+    padding: 20px;
   }
 
   .form-image {
-    max-width: 180px;
+    max-width: 120px;
   }
 
   .form-body {

@@ -6,44 +6,59 @@
     <title>Contact Payment</title>
     <link rel="icon" href="image/contact.png" type="x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css"/>
     <script src="https://github.com/davidhuotkeo/bakong-khqr/releases/download/bakong-khqr-1.0.6/khqr-1.0.6.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="form-container">
-        <!-- Form Section with Image as Part of Form -->
-        <form class="payment-form" onsubmit="return validateEmail()">
-            <div class="form-header">
-                <div class="image-container">
-                    <img src="image/KHQR.png" alt="Payment Instructions" class="form-image">
-                </div>
-                <h2 class="form-title">Send Payment Info</h2>
+    <div class="container">
+        <div class="row">
+          <!-- <div class="col">
+            
+          </div> -->
+          <div class="row align-items-center">
+            <div class="col">
+                <img src="image/Forex.png" alt="png" class="logo">
             </div>
-            <div class="form-body">
-                <div class="input-group">
-                    <label for="name" class="colored-label">Name:</label>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="input-group">
-                    <label for="email" class="colored-label">Email:</label>
-                    <input type="email" id="email" placeholder="Your Email" class="email-input" required>
-                </div>
-                <div class="input-group">
-                    <label for="message" class="colored-label">TradingView Username:</label>
-                    <input type="text" id="message" placeholder="TradingView Username" required>
-                </div>
-                <div class="input-group">
-                    <label for="file" class="colored-label">Upload Payment Image:</label>
-                    <input type="file" id="file" accept="image/*" required>
-                </div>
+          <div class="col">
+            <div class="form-container">
+                <!-- Form Section with Image as Part of Form -->
+                <form class="payment-form" onsubmit="return validateEmail()">
+                    <div class="form-header">
+                        <div class="image-container">
+                            <img src="image/KHQR.png" alt="Payment Instructions" class="form-image">
+                        </div>
+                        <h2 class="form-title">Send Payment Info</h2>
+                    </div>
+                    <div class="form-body">
+                        <div class="input-group">
+                            <label for="name" class="colored-label">Name:</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email" class="colored-label">Email:</label>
+                            <input type="email" id="email" placeholder="Your Email" class="email-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message" class="colored-label">TradingView Username:</label>
+                            <input type="text" id="message" placeholder="TradingView Username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="file" class="colored-label">Upload Payment Image:</label>
+                            <input type="file" id="file" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="button" id="btn" onclick="sendToTelegram()">Send</button>
+                        <div id="successMessage">Message Sent Successfully!</div>
+                    </div>
+                </form>
             </div>
-            <div class="form-footer">
-                <button type="button" id="btn" onclick="sendToTelegram()">Send</button>
-                <div id="successMessage">Message Sent Successfully!</div>
-            </div>
-        </form>
-    </div>
+          </div>
+        </div>
+      </div>
+    
     <script>
         function sendToTelegram() {
             var emailInput = document.getElementById('email');
